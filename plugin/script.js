@@ -14,9 +14,10 @@
 // Initialize Stripe (replace with your publishable key)
 const STRIPE_PUBLISHABLE_KEY = 'pk_test_YOUR_STRIPE_PUBLISHABLE_KEY_HERE';
 
-// Only initialize Stripe if key is configured
+// Only initialize Stripe if key is configured and valid
 let stripe = null;
-if (STRIPE_PUBLISHABLE_KEY && !STRIPE_PUBLISHABLE_KEY.includes('YOUR')) {
+const stripeKeyPattern = /^pk_(test|live)_[a-zA-Z0-9]+$/;
+if (STRIPE_PUBLISHABLE_KEY && stripeKeyPattern.test(STRIPE_PUBLISHABLE_KEY)) {
     try {
         stripe = Stripe(STRIPE_PUBLISHABLE_KEY);
     } catch (error) {
@@ -112,20 +113,20 @@ async function handleCheckout(plan) {
         const { error } = await stripe.redirectToCheckout({
             lineItems: [{ price: priceId, quantity: 1 }],
             mode: 'subscription',
-            successUrl: `${window.location.origin}/plugin/success.html`,
-            cancelUrl: `${window.location.origin}/plugin/index.html`,
+            successUrl: `${window.location.origin}${window.location.pathname.replace('index.html', '')}success.html`,
+            cancelUrl: window.location.href,
         });
         
         if (error) {
             console.error('Stripe Checkout error:', error);
-            alert('Erro ao conectar com o sistema de pagamento. Por favor, tente novamente em alguns instantes.');
+            showErrorModal('Erro ao conectar com o sistema de pagamento. Por favor, tente novamente em alguns instantes.');
         }
         
         hideLoading();
     } catch (error) {
         console.error('Checkout error:', error);
         hideLoading();
-        alert('Não foi possível processar o pagamento. Verifique sua conexão e tente novamente.');
+        showErrorModal('Não foi possível processar o pagamento. Verifique sua conexão e tente novamente.');
     }
 }
 
@@ -137,6 +138,49 @@ function handleEnterpriseContact() {
     const body = 'Olá, tenho interesse no plano Enterprise do plugin Stop and Go BR.';
     
     window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+
+// Show error modal for better UX
+function showErrorModal(message) {
+    const modal = document.createElement('div');
+    modal.style.cssText = `
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+        padding: 2rem;
+        border-radius: 15px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        max-width: 400px;
+        z-index: 10000;
+        text-align: center;
+    `;
+    modal.innerHTML = `
+        <div style="
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1rem;
+            background: #fee;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        ">⚠️</div>
+        <h3 style="color: #e63946; margin-bottom: 1rem;">Ops!</h3>
+        <p style="margin-bottom: 1.5rem; line-height: 1.6;">${message}</p>
+        <button onclick="this.parentElement.remove()" style="
+            background: #e63946;
+            color: white;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+        ">Entendi</button>
+    `;
+    document.body.appendChild(modal);
 }
 
 // Show configuration message when Stripe is not set up
