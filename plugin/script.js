@@ -38,6 +38,49 @@ const loadingOverlay = document.getElementById('loading-overlay');
 const pricingButtons = document.querySelectorAll('[data-plan]');
 const faqItems = document.querySelectorAll('.faq-item');
 
+// Mobile Navigation Toggle
+const navToggle = document.getElementById('nav-toggle');
+const navMenu = document.querySelector('.nav-menu');
+
+if (navToggle && navMenu) {
+    navToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+    });
+
+    // Close menu when clicking on a link
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+        });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
+            navMenu.classList.remove('active');
+        }
+    });
+}
+
+// Billing Toggle (Monthly/Annual)
+const billingToggle = document.getElementById('billing-toggle');
+if (billingToggle) {
+    billingToggle.addEventListener('change', () => {
+        const monthlyPrices = document.querySelectorAll('.monthly-price');
+        const annualPrices = document.querySelectorAll('.annual-price');
+        
+        if (billingToggle.checked) {
+            // Show annual prices
+            monthlyPrices.forEach(el => el.style.display = 'none');
+            annualPrices.forEach(el => el.style.display = 'inline');
+        } else {
+            // Show monthly prices
+            monthlyPrices.forEach(el => el.style.display = 'inline');
+            annualPrices.forEach(el => el.style.display = 'none');
+        }
+    });
+}
+
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
