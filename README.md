@@ -14,11 +14,11 @@ Galeria de temas com fotos reais dos dashboards, para combinar com seu estilo e 
 - **Dark (padrão)** — Visual ousado para ambientes com pouca luz.
 - **Light** — Interface clara para ambientes bem iluminados.
 - **Moradness** — Tema especial criado em colaboração com a equipe Moradness, com visual exclusivo.
-- **PSE / Dispositivo dedicado** — Tema feito para hardware parceiro da linha DD da Precision Sim Engineering e dispositivos equivalentes.
+- **PSE / Dispositivo dedicado** — Tema feito para hardware parceiro da linha DD de fabricantes premium (ex.: Precision Sim Engineering) e dispositivos equivalentes.
 
 ## Membership / Planos
 Comparativo de planos: mensal ou anual, com economia de 10% na assinatura anual.
-Tabela de preços (preencha com valores vigentes no CMS): Pit Crew [valor]/mês | Team Driver [valor]/mês | Team Principal [valor]/mês.
+Tabela de preços (use variáveis do CMS): Pit Crew {{PIT_CREW_PRICE}}/mês | Team Driver {{TEAM_DRIVER_PRICE}}/mês | Team Principal {{TEAM_PRINCIPAL_PRICE}}/mês.
 
 ### Pit Crew
 - Acesso ao Discord privado
