@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Plugin exclusivo para o seu campeonato - Stop and Go BR. Dashboards profissionais, telemetria avançada e gestão completa de campeonatos.">
+    <title>Stop and Go BR - Plugin Profissional para SimHub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="nav-brand">
+                    <span class="brand-highlight">SAG</span> Plugin
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#features">Recursos</a></li>
+                    <li><a href="#dashboards">Dashboards</a></li>
+                    <li><a href="#pricing">Planos</a></li>
+                    <li><a href="#download">Download</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+                <div class="nav-cta">
+                    <a href="#pricing" class="btn btn-primary">Começar Agora</a>
+                </div>
+                <button class="nav-toggle" id="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title animate-fade-in">
+                    Plugin Profissional para <span class="highlight">SimHub</span>
+                </h1>
+                <p class="hero-subtitle animate-fade-in-delay-1">
+                    Dashboards, LEDs e telemetria avançada para seus campeonatos
+                </p>
+                <p class="hero-description animate-fade-in-delay-2">
+                    Automatize a gestão, acompanhe dados em tempo real e ofereça a melhor experiência para seus pilotos
+                </p>
+                <div class="hero-cta animate-fade-in-delay-3">
+                    <a href="#pricing" class="btn btn-primary btn-large">
+                        Ver Planos
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <a href="#dashboards" class="btn btn-secondary btn-large">
+                        Ver Dashboards
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <span>Descubra mais</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M12 5V19M12 19L19 12M12 19L5 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Key Features Section -->
+    <section id="features" class="key-features">
+        <div class="container">
+            <div class="features-grid-modern">
+                <div class="feature-card-modern">
+                    <div class="feature-icon-modern">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <rect x="8" y="12" width="32" height="24" rx="2" stroke="currentColor" stroke-width="2.5"/>
+                            <path d="M8 20H40" stroke="currentColor" stroke-width="2.5"/>
+                            <circle cx="16" cy="26" r="2" fill="currentColor"/>
+                            <circle cx="24" cy="26" r="2" fill="currentColor"/>
+                            <circle cx="32" cy="26" r="2" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title-modern">Fácil de usar com SimHub</h3>
+                    <p class="feature-description-modern">
+                        Nossos perfis de LED e dashboards são feitos para SimHub e você pode personalizá-los facilmente com nosso plugin dedicado.
+                    </p>
+                </div>
+
+                <div class="feature-card-modern">
+                    <div class="feature-icon-modern">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <path d="M24 8L8 16V28C8 28 8 40 24 40C40 40 40 28 40 28V16L24 8Z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+                            <path d="M24 24L16 20M24 24L32 20M24 24V32" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title-modern">Recursos de telemetria avançados</h3>
+                    <p class="feature-description-modern">
+                        Utilizando conjuntos de dados sofisticados, oferecemos uma experiência incomparável com recursos nunca vistos antes.
+                    </p>
+                </div>
+
+                <div class="feature-card-modern">
+                    <div class="feature-icon-modern">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <rect x="12" y="8" width="24" height="32" rx="2" stroke="currentColor" stroke-width="2.5"/>
+                            <path d="M18 8V6C18 4.89543 18.8954 4 20 4H28C29.1046 4 30 4.89543 30 6V8" stroke="currentColor" stroke-width="2.5"/>
+                            <circle cx="24" cy="24" r="6" stroke="currentColor" stroke-width="2.5"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title-modern">Múltiplos dispositivos</h3>
+                    <p class="feature-description-modern">
+                        Compatível com mais de 100 dos hardwares mais populares do Sim Racing, garantindo uma experiência consistente e unificada.
+                    </p>
+                </div>
+
+                <div class="feature-card-modern">
+                    <div class="feature-icon-modern">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="16" stroke="currentColor" stroke-width="2.5"/>
+                            <path d="M24 12V24L32 28" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                            <path d="M24 24L16 20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title-modern">Compatível com os principais títulos de Sim Racing</h3>
+                    <p class="feature-description-modern">
+                        Fornecendo dados específicos para iRacing, Assetto Corsa Competizione, EA Sports F1, Le Mans Ultimate, Automobilista 2 e muito mais!
+                    </p>
+                </div>
+
+                <div class="feature-card-modern">
+                    <div class="feature-icon-modern">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <path d="M24 4L28 16H40L30 24L34 36L24 28L14 36L18 24L8 16H20L24 4Z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title-modern">Confiado por campeões</h3>
+                    <p class="feature-description-modern">
+                        Confiado por pilotos sérios em todo o mundo. Nossos perfis são projetados para dar a você a vantagem quando mais importa.
+                    </p>
+                </div>
+
+                <div class="feature-card-modern">
+                    <div class="feature-icon-modern">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <path d="M8 24C8 24 12 12 24 12C36 12 40 24 40 24C40 24 36 36 24 36C12 36 8 24 8 24Z" stroke="currentColor" stroke-width="2.5"/>
+                            <circle cx="24" cy="24" r="6" stroke="currentColor" stroke-width="2.5"/>
+                            <path d="M20 16L16 12M28 16L32 12M28 32L32 36M20 32L16 36" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title-modern">Seus carros favoritos</h3>
+                    <p class="feature-description-modern">
+                        Suportando TODOS os veículos dos títulos mais populares do Sim Racing. Mais de 600 carros com dados precisos de RPM para cada marcha.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Themes Section -->
+    <section id="dashboards" class="dashboards">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Dashboards Profissionais</h2>
+                <p class="section-subtitle">Temas personalizáveis para combinar com seu estilo</p>
+            </div>
+            
+            <div class="dashboards-content">
+                <div class="dashboard-intro">
+                    <div class="dashboard-icon">
+                        <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+                            <rect x="8" y="12" width="48" height="40" rx="3" stroke="currentColor" stroke-width="3"/>
+                            <path d="M8 24H56" stroke="currentColor" stroke-width="3"/>
+                            <circle cx="20" cy="36" r="4" stroke="currentColor" stroke-width="2"/>
+                            <path d="M32 32H48M32 36H44M32 40H48" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3>Temas</h3>
+                    <p>
+                        Nossos dashboards oferecem temas distintos, permitindo combinar a interface com seu estilo pessoal. 
+                        Escolha entre o tema escuro padrão para ambientes com pouca luz, ou mude para o tema claro para ambientes bem iluminados.
+                    </p>
+                    <p>
+                        Cada tema foi cuidadosamente projetado para oferecer a melhor legibilidade e estética, 
+                        garantindo que você tenha todas as informações necessárias à mão durante a corrida.
+                    </p>
+                </div>
+
+                <div class="dashboard-themes">
+                    <div class="theme-card">
+                        <div class="theme-image">
+                            <div class="theme-placeholder theme-dark">
+                                <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                                    <rect width="80" height="80" rx="8" fill="currentColor" opacity="0.1"/>
+                                    <rect x="12" y="12" width="56" height="36" rx="2" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M12 24H68" stroke="currentColor" stroke-width="2"/>
+                                    <circle cx="28" cy="34" r="6" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M44 30H60M44 34H56M44 38H60" stroke="currentColor" stroke-width="2"/>
+                                    <text x="40" y="62" font-size="12" fill="currentColor">Tema Escuro</text>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="theme-info">
+                            <h4>Tema Padrão (Escuro)</h4>
+                            <p>Ideal para corridas noturnas e ambientes com pouca luz</p>
+                        </div>
+                    </div>
+
+                    <div class="theme-card">
+                        <div class="theme-image">
+                            <div class="theme-placeholder theme-light">
+                                <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                                    <rect width="80" height="80" rx="8" fill="currentColor" opacity="0.05"/>
+                                    <rect x="12" y="12" width="56" height="36" rx="2" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M12 24H68" stroke="currentColor" stroke-width="2"/>
+                                    <circle cx="28" cy="34" r="6" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M44 30H60M44 34H56M44 38H60" stroke="currentColor" stroke-width="2"/>
+                                    <text x="40" y="62" font-size="12" fill="currentColor">Tema Claro</text>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="theme-info">
+                            <h4>Tema Claro</h4>
+                            <p>Perfeito para ambientes bem iluminados</p>
+                        </div>
+                    </div>
+
+                    <div class="theme-card">
+                        <div class="theme-image">
+                            <div class="theme-placeholder theme-custom">
+                                <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                                    <rect width="80" height="80" rx="8" fill="currentColor" opacity="0.1"/>
+                                    <rect x="12" y="12" width="56" height="36" rx="2" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M12 24H68" stroke="currentColor" stroke-width="2"/>
+                                    <circle cx="28" cy="34" r="6" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M44 30H60M44 34H56M44 38H60" stroke="currentColor" stroke-width="2"/>
+                                    <text x="40" y="62" font-size="12" fill="currentColor">Tema Racing</text>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="theme-info">
+                            <h4>Tema Racing</h4>
+                            <p>Design agressivo para pilotos competitivos</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-note">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                        <path d="M12 8V12M12 16H12.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <p>
+                        <strong>Dica:</strong> Substitua as imagens de placeholder pelos seus próprios screenshots dos dashboards 
+                        na pasta <code>plugin/images/</code> para mostrar seus designs reais aos visitantes.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="container">
+            <div class="benefits-content">
+                <div class="benefits-text">
+                    <h2 class="section-title">Por Que Escolher Nosso Plugin?</h2>
+                    <ul class="benefits-list">
+                        <li>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span><strong>Suporte Dedicado:</strong> Equipe pronta para ajudar você</span>
+                        </li>
+                        <li>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span><strong>Atualizações Constantes:</strong> Novos recursos adicionados regularmente</span>
+                        </li>
+                        <li>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span><strong>Comunidade Ativa:</strong> Junte-se a centenas de organizadores</span>
+                        </li>
+                        <li>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span><strong>Documentação Completa:</strong> Guias passo a passo e tutoriais em vídeo</span>
+                        </li>
+                        <li>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span><strong>Garantia de Satisfação:</strong> 30 dias de garantia ou seu dinheiro de volta</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="benefits-visual">
+                    <div class="stats-card">
+                        <div class="stat">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">Campeonatos Ativos</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">10k+</span>
+                            <span class="stat-label">Pilotos Registrados</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">98%</span>
+                            <span class="stat-label">Satisfação</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Assinatura SAG Plugin</h2>
+                <p class="section-subtitle">Além do conteúdo gratuito, oferecemos uma biblioteca em expansão de perfis e personalizações exclusivos para membros</p>
+            </div>
+
+            <!-- Billing Toggle -->
+            <div class="billing-toggle">
+                <span class="billing-label">Mensal</span>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="billing-toggle">
+                    <span class="toggle-slider"></span>
+                </label>
+                <span class="billing-label">
+                    Anual
+                    <span class="save-badge">Economize 10%</span>
+                </span>
+            </div>
+
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 class="pricing-plan">Pit Crew</h3>
+                        <div class="pricing-price">
+                            <span class="currency">R$</span>
+                            <span class="amount monthly-price">99</span>
+                            <span class="amount annual-price" style="display: none;">89</span>
+                            <span class="period">/mês</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M16 6L8 14L4 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Discord privado SAG
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M16 6L8 14L4 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Acesso completo ao plugin SimHub
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M16 6L8 14L4 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Perfis avançados de RPM
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M16 6L8 14L4 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Dashboards com personalização
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M16 6L8 14L4 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Perfis de volante e button box
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M16 6L8 14L4 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Perfis de flag box e luzes ambiente
+                        </li>
+                    </ul>
+                    <button class="btn btn-outline btn-block" data-plan="basic">
+                        Assinar Pit Crew
+                    </button>
+                </div>
+
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">Mais Popular</div>
+                    <div class="pricing-header">
+                        <h3 class="pricing-plan">Team Driver</h3>
+                        <div class="pricing-price">
+                            <span class="currency">R$</span>
+                            <span class="amount monthly-price">199</span>
+                            <span class="amount annual-price" style="display: none;">179</span>
+                            <span class="period">/mês</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M16 6L8 14L4 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Discord privado SAG
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M16 6L8 14L4 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Acesso completo ao plugin SimHub
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M16 6L8 14L4 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Perfis avançados de RPM
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M16 6L8 14L4 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Dashboards com personalização
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M16 6L8 14L4 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Perfis de volante e button box
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M16 6L8 14L4 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Perfis de flag box e luzes ambiente
+                        </li>
+                    </ul>
+                    <button class="btn btn-primary btn-block" data-plan="professional">
+                        Assinar Team Driver
+                    </button>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 class="pricing-plan">Team Principal</h3>
+                        <div class="pricing-price">
+                            <span class="currency">R$</span>
+                            <span class="amount monthly-price">299</span>
+                            <span class="amount annual-price" style="display: none;">269</span>
+                            <span class="period">/mês</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M16 6L8 14L4 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Todos os recursos do Team Driver
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M16 6L8 14L4 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            'Surpresas' exclusivas SAG
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M16 6L8 14L4 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Suporte prioritário 24/7
+                        </li>
+                        <li class="pricing-note">
+                            <p style="margin-top: 1rem; font-style: italic; opacity: 0.9;">
+                                Se você aprecia nosso trabalho e quer aquela experiência VIP do pit lane, este nível é para você.
+                            </p>
+                        </li>
+                    </ul>
+                    <button class="btn btn-outline btn-block" data-plan="enterprise">
+                        Assinar Team Principal
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="download">
+        <div class="container">
+            <div class="download-content">
+                <div class="download-header">
+                    <svg width="80" height="80" viewBox="0 0 80 80" fill="none" class="download-icon">
+                        <circle cx="40" cy="40" r="36" stroke="currentColor" stroke-width="3"/>
+                        <path d="M40 20V52M40 52L28 40M40 52L52 40" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M24 60H56" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                    </svg>
+                    <h2 class="section-title">Download do Plugin</h2>
+                    <p class="section-subtitle">Comece a usar o SAG Plugin em minutos</p>
+                </div>
+
+                <div class="download-steps">
+                    <div class="download-step">
+                        <div class="step-number">1</div>
+                        <h3>Assine um Plano</h3>
+                        <p>Escolha o plano que melhor se adapta às suas necessidades e complete a assinatura</p>
+                    </div>
+                    <div class="download-step">
+                        <div class="step-number">2</div>
+                        <h3>Receba o Link</h3>
+                        <p>Você receberá um email com o link para download e suas credenciais de acesso</p>
+                    </div>
+                    <div class="download-step">
+                        <div class="step-number">3</div>
+                        <h3>Instale e Configure</h3>
+                        <p>Siga nossas instruções passo a passo para instalar e configurar o plugin no SimHub</p>
+                    </div>
+                </div>
+
+                <div class="download-requirements">
+                    <h3>Requisitos do Sistema</h3>
+                    <div class="requirements-grid">
+                        <div class="requirement-item">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <rect x="4" y="4" width="16" height="16" rx="2" stroke="currentColor" stroke-width="2"/>
+                                <path d="M4 10H20" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <div>
+                                <strong>SimHub</strong>
+                                <p>Versão 8.0 ou superior</p>
+                            </div>
+                        </div>
+                        <div class="requirement-item">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
+                                <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            <div>
+                                <strong>Windows</strong>
+                                <p>Windows 10 ou superior</p>
+                            </div>
+                        </div>
+                        <div class="requirement-item">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M21 16V8C21 6.89543 20.1046 6 19 6H5C3.89543 6 3 6.89543 3 8V16C3 17.1046 3.89543 18 5 18H19C20.1046 18 21 17.1046 21 16Z" stroke="currentColor" stroke-width="2"/>
+                                <path d="M3 10H21" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <div>
+                                <strong>Hardware</strong>
+                                <p>Compatível com 100+ dispositivos</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="download-cta">
+                    <p>Pronto para começar?</p>
+                    <a href="#pricing" class="btn btn-primary btn-large">Ver Planos e Assinar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Perguntas Frequentes</h2>
+                <p class="section-subtitle">Tudo que você precisa saber sobre o SAG Plugin</p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Como funciona a instalação do plugin no SimHub?</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="faq-icon">
+                            <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>A instalação é simples e rápida. Após a assinatura, você receberá um email com o link para download e instruções detalhadas passo a passo. O processo leva menos de 5 minutos e não requer conhecimentos técnicos avançados. Basta copiar os arquivos para a pasta do SimHub e ativar o plugin.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Posso cancelar minha assinatura a qualquer momento?</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="faq-icon">
+                            <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Sim! Você pode cancelar sua assinatura a qualquer momento através do seu painel de controle, sem multas ou taxas adicionais. O acesso aos recursos continuará até o final do período já pago.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Com quais simuladores o plugin é compatível?</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="faq-icon">
+                            <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>O SAG Plugin é compatível com os principais simuladores de corrida: iRacing, Assetto Corsa Competizione, EA Sports F1 (todas as versões), Le Mans Ultimate, Automobilista 2, rFactor 2, e muitos outros. Suportamos mais de 600 carros com dados precisos de RPM.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Quais dispositivos são suportados?</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="faq-icon">
+                            <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Nosso plugin é compatível com mais de 100 dispositivos diferentes, incluindo volantes, button boxes, dashboards LCD, painéis de LED, sistemas de luzes RGB, e muito mais. Trabalhamos continuamente para adicionar suporte a novos hardwares.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Existe diferença entre plano mensal e anual?</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="faq-icon">
+                            <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Os recursos são exatamente os mesmos. A diferença é apenas no período de cobrança e no desconto. Assinantes anuais economizam 10% comparado ao plano mensal, o equivalente a mais de um mês grátis por ano.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Como funciona o suporte técnico?</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="faq-icon">
+                            <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Oferecemos suporte através do nosso Discord privado para membros, email e documentação completa com tutoriais em vídeo. Membros dos planos Team Driver e Team Principal têm acesso a suporte prioritário com tempo de resposta mais rápido.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final Section -->
+    <section class="cta-final">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Pronto Para Começar?</h2>
+                <p class="cta-subtitle">Junte-se a centenas de organizadores que já transformaram seus campeonatos</p>
+                <div class="cta-buttons">
+                    <a href="#pricing" class="btn btn-primary btn-large">
+                        Adquira Agora
+                    </a>
+                    <a href="#" class="btn btn-secondary btn-large" id="contact-btn">
+                        Fale Conosco
+                    </a>
+                </div>
+                <p class="cta-note">
+                    🔒 Pagamento seguro via Stripe • ✅ Garantia de 30 dias
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Stop and Go BR</h3>
+                    <p>Transformando campeonatos de corrida</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Produto</h4>
+                        <ul>
+                            <li><a href="#features">Recursos</a></li>
+                            <li><a href="#pricing">Preços</a></li>
+                            <li><a href="#faq">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Empresa</h4>
+                        <ul>
+                            <li><a href="/">Site Principal</a></li>
+                            <li><a href="/loja">Loja</a></li>
+                            <li><a href="#">Contato</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Suporte</h4>
+                        <ul>
+                            <li><a href="#">Documentação</a></li>
+                            <li><a href="#">Tutoriais</a></li>
+                            <li><a href="#">Comunidade</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Stop and Go BR. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="loading-spinner"></div>
+        <p>Processando pagamento...</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

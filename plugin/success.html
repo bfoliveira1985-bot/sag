@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento Confirmado - Plugin Stop and Go BR</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .success-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--dark-bg) 0%, var(--secondary-dark) 100%);
+            padding: var(--spacing-md);
+        }
+        
+        .success-card {
+            background: var(--white);
+            border-radius: 30px;
+            padding: var(--spacing-xl);
+            max-width: 600px;
+            text-align: center;
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .success-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto var(--spacing-lg);
+            background: linear-gradient(135deg, #10b981, #059669);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: scaleIn 0.5s ease-out;
+        }
+        
+        @keyframes scaleIn {
+            from {
+                transform: scale(0);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+        
+        .success-icon svg {
+            width: 50px;
+            height: 50px;
+            color: white;
+        }
+        
+        .success-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--dark-bg);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .success-message {
+            font-size: 1.125rem;
+            color: var(--gray);
+            margin-bottom: var(--spacing-lg);
+            line-height: 1.8;
+        }
+        
+        .success-details {
+            background: var(--gray-light);
+            border-radius: 15px;
+            padding: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+            text-align: left;
+        }
+        
+        .success-details h3 {
+            color: var(--dark-bg);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .success-details ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .success-details li {
+            padding: var(--spacing-xs) 0;
+            color: var(--gray-dark);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+        
+        .success-details li svg {
+            color: var(--primary-color);
+            flex-shrink: 0;
+        }
+        
+        .success-actions {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+        }
+    </style>
+</head>
+<body>
+    <div class="success-container">
+        <div class="success-card">
+            <div class="success-icon">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                </svg>
+            </div>
+            
+            <h1 class="success-title">Pagamento Confirmado!</h1>
+            
+            <p class="success-message">
+                Obrigado pela sua compra! Seu pagamento foi processado com sucesso e você já pode começar a usar o plugin Stop and Go BR.
+            </p>
+            
+            <div class="success-details">
+                <h3>📦 Próximos Passos:</h3>
+                <ul>
+                    <li>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M16 6L8 14L4 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Verifique seu email com as instruções de instalação
+                    </li>
+                    <li>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M16 6L8 14L4 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Baixe o plugin através do link enviado
+                    </li>
+                    <li>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M16 6L8 14L4 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Acesse a documentação completa e tutoriais
+                    </li>
+                    <li>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M16 6L8 14L4 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Entre na comunidade e receba suporte
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="success-actions">
+                <a href="mailto:contato@stopandgobr.com?subject=Download do Plugin" class="btn btn-primary btn-block">
+                    Solicitar Download
+                </a>
+                <a href="index.html#features" class="btn btn-outline btn-block">
+                    Ver Recursos
+                </a>
+                <a href="../" class="btn btn-secondary btn-block">
+                    Voltar ao Site
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
