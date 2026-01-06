@@ -1,4 +1,4 @@
-# SAG - Conteúdo para Landing Page
+# SAG - Conteúdo de Landing Page
 
 ## Seção principal (destaques)
 - **SimHub** — Perfis de LED e dashboards prontos para o SimHub, com personalização via plugin dedicado.
@@ -18,8 +18,9 @@ Galeria de temas com fotos reais dos dashboards, para combinar com seu estilo e 
 
 ## Membership / Planos
 Comparativo de planos: mensal ou anual, com economia de 10% na assinatura anual.
+Tabela de preços (atualize aqui sempre que os valores mudarem): Pit Crew £3/mês | Team Driver £6/mês | Team Principal £9/mês.
 
-### Pit Crew — £3/mês
+### Pit Crew
 - Acesso ao Discord privado
 - Acesso completo ao plugin SimHub
 - Perfis de RPM avançados
@@ -28,12 +29,12 @@ Comparativo de planos: mensal ou anual, com economia de 10% na assinatura anual.
 - Perfis para flag box, eyebrow light (barra superior) e ambient light
 - **CTA:** Quero entrar no Pit Crew
 
-### Team Driver — £6/mês
+### Team Driver
 - Tudo do Pit Crew
 - Dashboards e perfis adicionais para devices avançados
 - **CTA:** Quero ser Team Driver
 
-### Team Principal — £9/mês
+### Team Principal
 - Todos os recursos do Team Driver
 - Conteúdos exclusivos: layouts bônus, atualizações antecipadas e brindes digitais
 - **CTA:** Quero ser Team Principal
