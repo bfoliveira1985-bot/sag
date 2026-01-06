@@ -1,4 +1,4 @@
-# SAG - Conteúdo para Landing Page (inspirado no site de referência)
+# SAG - Conteúdo para Landing Page
 
 ## Seção principal (destaques)
 - **SimHub** — Perfis de LED e dashboards prontos para o SimHub, com personalização via plugin dedicado.
@@ -13,12 +13,11 @@ Galeria de temas com fotos reais dos dashboards, para combinar com seu estilo e 
 
 - **Dark (padrão)** — Visual ousado para ambientes com pouca luz.
 - **Light** — Interface clara para ambientes bem iluminados.
-- **Moradness** — Tema comemorativo da colaboração com a comunidade, com visual exclusivo.
+- **Moradness** — Tema especial criado em colaboração com a equipe Moradness, com visual exclusivo.
 - **PSE / Dispositivo dedicado** — Tema feito para hardware parceiro (DD-X / DD-R) e dispositivos equivalentes.
 
 ## Membership / Planos
-Comparativo de planos (mensal ou anual com economia de cerca de 10% no anual).
-Assinatura anual: economia aproximada de 10% versus o valor mensal.
+Comparativo de planos: mensal ou anual, com economia de cerca de 10% na assinatura anual.
 
 ### Pit Crew — £3/mês
 - Acesso ao Discord privado
