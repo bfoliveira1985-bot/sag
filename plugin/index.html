@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Plugin exclusivo para o seu campeonato - Stop and Go BR">
+    <title>Plugin Stop and Go BR - Transforme Seu Campeonato</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title animate-fade-in">
+                    <span class="highlight">Plugin</span> Stop and Go BR
+                </h1>
+                <p class="hero-subtitle animate-fade-in-delay-1">
+                    Leve seu campeonato de corrida para o próximo nível
+                </p>
+                <p class="hero-description animate-fade-in-delay-2">
+                    Automatize, gerencie e melhore a experiência dos seus pilotos com nosso plugin exclusivo
+                </p>
+                <div class="hero-cta animate-fade-in-delay-3">
+                    <a href="#pricing" class="btn btn-primary btn-large">
+                        Adquira Agora
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <a href="#features" class="btn btn-secondary btn-large">
+                        Saiba Mais
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <span>Role para descobrir</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M12 5V19M12 19L19 12M12 19L5 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Recursos Incríveis</h2>
+                <p class="section-subtitle">Tudo que você precisa para gerenciar seu campeonato</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <path d="M24 4L4 14L24 24L44 14L24 4Z" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M4 34L24 44L44 34" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M4 24L24 34L44 24" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Gestão Automática</h3>
+                    <p class="feature-description">
+                        Automatize a gestão de pontuação, classificação e resultados em tempo real
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="3"/>
+                            <path d="M24 12V24L32 28" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Tempo Real</h3>
+                    <p class="feature-description">
+                        Acompanhe telemetria e estatísticas ao vivo durante as corridas
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <rect x="6" y="10" width="36" height="28" rx="2" stroke="currentColor" stroke-width="3"/>
+                            <path d="M6 18H42" stroke="currentColor" stroke-width="3"/>
+                            <circle cx="24" cy="26" r="4" stroke="currentColor" stroke-width="3"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Dashboard Completo</h3>
+                    <p class="feature-description">
+                        Interface intuitiva com todas as informações que você precisa
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <path d="M24 44C35.046 44 44 35.046 44 24C44 12.954 35.046 4 24 4C12.954 4 4 12.954 4 24C4 35.046 12.954 44 24 44Z" stroke="currentColor" stroke-width="3"/>
+                            <path d="M24 16V24L30 30" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Histórico Completo</h3>
+                    <p class="feature-description">
+                        Acesse estatísticas e resultados de todas as temporadas anteriores
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <path d="M40 24C40 32.837 32.837 40 24 40C15.163 40 8 32.837 8 24C8 15.163 15.163 8 24 8" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                            <path d="M44 12L24 12L24 32" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Relatórios Avançados</h3>
+                    <p class="feature-description">
+                        Gere relatórios detalhados sobre desempenho e estatísticas
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <path d="M24 4V44M4 24H44" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                            <circle cx="24" cy="24" r="8" stroke="currentColor" stroke-width="3"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Integração Fácil</h3>
+                    <p class="feature-description">
+                        Instale e configure em minutos, compatível com principais jogos de corrida
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots/Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Veja o Plugin em Ação</h2>
+                <p class="section-subtitle">Interface moderna e intuitiva</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+                            <rect width="64" height="64" rx="8" fill="currentColor" opacity="0.1"/>
+                            <path d="M20 44L32 28L44 44" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="40" cy="24" r="4" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        <p>Dashboard Principal</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+                            <rect width="64" height="64" rx="8" fill="currentColor" opacity="0.1"/>
+                            <path d="M20 44L32 28L44 44" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="40" cy="24" r="4" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        <p>Telemetria em Tempo Real</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+                            <rect width="64" height="64" rx="8" fill="currentColor" opacity="0.1"/>
+                            <path d="M20 44L32 28L44 44" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="40" cy="24" r="4" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        <p>Gestão de Campeonatos</p>
+                    </div>
+                </div>
+            </div>
+            <p class="gallery-note">
+                💡 <strong>Dica:</strong> Substitua as imagens acima pelos seus próprios screenshots do plugin na pasta <code>plugin/images/</code>
+            </p>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="container">
+            <div class="benefits-content">
+                <div class="benefits-text">
+                    <h2 class="section-title">Por Que Escolher Nosso Plugin?</h2>
+                    <ul class="benefits-list">
+                        <li>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span><strong>Suporte Dedicado:</strong> Equipe pronta para ajudar você</span>
+                        </li>
+                        <li>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span><strong>Atualizações Constantes:</strong> Novos recursos adicionados regularmente</span>
+                        </li>
+                        <li>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span><strong>Comunidade Ativa:</strong> Junte-se a centenas de organizadores</span>
+                        </li>
+                        <li>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span><strong>Documentação Completa:</strong> Guias passo a passo e tutoriais em vídeo</span>
+                        </li>
+                        <li>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span><strong>Garantia de Satisfação:</strong> 30 dias de garantia ou seu dinheiro de volta</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="benefits-visual">
+                    <div class="stats-card">
+                        <div class="stat">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">Campeonatos Ativos</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">10k+</span>
+                            <span class="stat-label">Pilotos Registrados</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">98%</span>
+                            <span class="stat-label">Satisfação</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Escolha Seu Plano</h2>
+                <p class="section-subtitle">Preços justos para todos os tamanhos de campeonato</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 class="pricing-plan">Básico</h3>
+                        <div class="pricing-price">
+                            <span class="currency">R$</span>
+                            <span class="amount">99</span>
+                            <span class="period">/mês</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M16 6L8 14L4 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Até 50 pilotos
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M16 6L8 14L4 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            1 campeonato ativo
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M16 6L8 14L4 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Relatórios básicos
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M16 6L8 14L4 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Suporte por email
+                        </li>
+                    </ul>
+                    <button class="btn btn-outline btn-block" data-plan="basic">
+                        Começar Agora
+                    </button>
+                </div>
+
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">Mais Popular</div>
+                    <div class="pricing-header">
+                        <h3 class="pricing-plan">Profissional</h3>
+                        <div class="pricing-price">
+                            <span class="currency">R$</span>
+                            <span class="amount">199</span>
+                            <span class="period">/mês</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M16 6L8 14L4 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Até 200 pilotos
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M16 6L8 14L4 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Campeonatos ilimitados
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M16 6L8 14L4 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Relatórios avançados
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M16 6L8 14L4 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Telemetria em tempo real
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M16 6L8 14L4 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Suporte prioritário
+                        </li>
+                    </ul>
+                    <button class="btn btn-primary btn-block" data-plan="professional">
+                        Começar Agora
+                    </button>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 class="pricing-plan">Enterprise</h3>
+                        <div class="pricing-price">
+                            <span class="currency">R$</span>
+                            <span class="amount">399</span>
+                            <span class="period">/mês</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M16 6L8 14L4 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Pilotos ilimitados
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M16 6L8 14L4 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Campeonatos ilimitados
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M16 6L8 14L4 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Todos os recursos
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M16 6L8 14L4 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            API personalizada
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M16 6L8 14L4 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Suporte 24/7
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M16 6L8 14L4 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Gerente de conta dedicado
+                        </li>
+                    </ul>
+                    <button class="btn btn-outline btn-block" data-plan="enterprise">
+                        Fale Conosco
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Perguntas Frequentes</h2>
+                <p class="section-subtitle">Tudo que você precisa saber</p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Como funciona a instalação do plugin?</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="faq-icon">
+                            <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>A instalação é simples e rápida. Após a compra, você receberá um link para download e instruções detalhadas. O processo leva menos de 5 minutos e não requer conhecimentos técnicos avançados.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Posso cancelar minha assinatura a qualquer momento?</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="faq-icon">
+                            <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Sim! Você pode cancelar sua assinatura a qualquer momento sem multas ou taxas adicionais. O acesso continuará até o final do período pago.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Com quais jogos o plugin é compatível?</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="faq-icon">
+                            <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>O plugin é compatível com os principais simuladores de corrida, incluindo Assetto Corsa, iRacing, F1, e outros. Consulte a documentação completa para ver a lista atualizada.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Existe período de teste gratuito?</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="faq-icon">
+                            <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Oferecemos uma garantia de 30 dias. Se você não estiver satisfeito, devolvemos seu dinheiro sem perguntas.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Como funciona o suporte técnico?</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="faq-icon">
+                            <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Oferecemos suporte por email, chat e documentação completa. Clientes dos planos Professional e Enterprise têm acesso a suporte prioritário.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final Section -->
+    <section class="cta-final">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Pronto Para Começar?</h2>
+                <p class="cta-subtitle">Junte-se a centenas de organizadores que já transformaram seus campeonatos</p>
+                <div class="cta-buttons">
+                    <a href="#pricing" class="btn btn-primary btn-large">
+                        Adquira Agora
+                    </a>
+                    <a href="#" class="btn btn-secondary btn-large" id="contact-btn">
+                        Fale Conosco
+                    </a>
+                </div>
+                <p class="cta-note">
+                    🔒 Pagamento seguro via Stripe • ✅ Garantia de 30 dias
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Stop and Go BR</h3>
+                    <p>Transformando campeonatos de corrida</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Produto</h4>
+                        <ul>
+                            <li><a href="#features">Recursos</a></li>
+                            <li><a href="#pricing">Preços</a></li>
+                            <li><a href="#faq">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Empresa</h4>
+                        <ul>
+                            <li><a href="/">Site Principal</a></li>
+                            <li><a href="/loja">Loja</a></li>
+                            <li><a href="#">Contato</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Suporte</h4>
+                        <ul>
+                            <li><a href="#">Documentação</a></li>
+                            <li><a href="#">Tutoriais</a></li>
+                            <li><a href="#">Comunidade</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Stop and Go BR. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="loading-spinner"></div>
+        <p>Processando pagamento...</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

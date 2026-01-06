@@ -1,0 +1,244 @@
+// Initialize Stripe (replace with your publishable key)
+// Get your publishable key from: https://dashboard.stripe.com/apikeys
+const STRIPE_PUBLISHABLE_KEY = 'pk_test_YOUR_STRIPE_PUBLISHABLE_KEY_HERE';
+const stripe = Stripe(STRIPE_PUBLISHABLE_KEY);
+
+// Price IDs for each plan (replace with your actual Stripe Price IDs)
+// Create products and prices at: https://dashboard.stripe.com/products
+const PRICING_PLANS = {
+    basic: 'price_BASIC_PLAN_ID',
+    professional: 'price_PROFESSIONAL_PLAN_ID',
+    enterprise: 'price_ENTERPRISE_PLAN_ID'
+};
+
+// DOM Elements
+const loadingOverlay = document.getElementById('loading-overlay');
+const pricingButtons = document.querySelectorAll('[data-plan]');
+const faqItems = document.querySelectorAll('.faq-item');
+
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// FAQ Toggle
+faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    question.addEventListener('click', () => {
+        // Close other open items
+        faqItems.forEach(otherItem => {
+            if (otherItem !== item && otherItem.classList.contains('active')) {
+                otherItem.classList.remove('active');
+            }
+        });
+        // Toggle current item
+        item.classList.toggle('active');
+    });
+});
+
+// Stripe Checkout Integration
+pricingButtons.forEach(button => {
+    button.addEventListener('click', async () => {
+        const plan = button.getAttribute('data-plan');
+        
+        // Special handling for enterprise plan
+        if (plan === 'enterprise') {
+            handleEnterpriseContact();
+            return;
+        }
+        
+        await handleCheckout(plan);
+    });
+});
+
+// Handle Stripe Checkout
+async function handleCheckout(plan) {
+    try {
+        // Show loading overlay
+        showLoading();
+        
+        const priceId = PRICING_PLANS[plan];
+        
+        if (!priceId || priceId.includes('YOUR') || priceId.includes('ID')) {
+            // If Stripe is not configured, show a message
+            hideLoading();
+            showConfigurationMessage();
+            return;
+        }
+        
+        // Create Checkout Session
+        // In production, this should call your backend API
+        // Example: const response = await fetch('/api/create-checkout-session', { ... })
+        
+        // For now, redirect to Stripe Checkout with the price ID
+        const { error } = await stripe.redirectToCheckout({
+            lineItems: [{ price: priceId, quantity: 1 }],
+            mode: 'subscription',
+            successUrl: `${window.location.origin}/plugin/success.html`,
+            cancelUrl: `${window.location.origin}/plugin/index.html`,
+        });
+        
+        if (error) {
+            console.error('Stripe Checkout error:', error);
+            alert('Erro ao processar pagamento. Por favor, tente novamente.');
+        }
+        
+        hideLoading();
+    } catch (error) {
+        console.error('Checkout error:', error);
+        hideLoading();
+        alert('Erro ao processar pagamento. Por favor, tente novamente.');
+    }
+}
+
+// Handle Enterprise Contact
+function handleEnterpriseContact() {
+    // You can customize this to open a contact form or redirect to a contact page
+    const email = 'contato@stopandgobr.com';
+    const subject = 'Interesse no Plano Enterprise';
+    const body = 'Olá, tenho interesse no plano Enterprise do plugin Stop and Go BR.';
+    
+    window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+
+// Show configuration message when Stripe is not set up
+function showConfigurationMessage() {
+    alert(
+        'Configuração Necessária:\n\n' +
+        '1. Obtenha suas chaves da API Stripe em: https://dashboard.stripe.com/apikeys\n' +
+        '2. Crie seus produtos e preços em: https://dashboard.stripe.com/products\n' +
+        '3. Atualize o arquivo script.js com suas chaves\n\n' +
+        'Por enquanto, entre em contato conosco para adquirir o plugin.'
+    );
+}
+
+// Loading overlay controls
+function showLoading() {
+    loadingOverlay.classList.add('active');
+}
+
+function hideLoading() {
+    loadingOverlay.classList.remove('active');
+}
+
+// Scroll animations
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, observerOptions);
+
+// Observe all cards and sections for animation
+document.addEventListener('DOMContentLoaded', () => {
+    const animatedElements = document.querySelectorAll(
+        '.feature-card, .gallery-item, .pricing-card, .benefit-item, .faq-item'
+    );
+    
+    animatedElements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+        observer.observe(el);
+    });
+});
+
+// Add parallax effect to hero section
+window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const hero = document.querySelector('.hero');
+    if (hero) {
+        hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+    }
+});
+
+// Contact button handler
+const contactBtn = document.getElementById('contact-btn');
+if (contactBtn) {
+    contactBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const email = 'contato@stopandgobr.com';
+        const subject = 'Contato - Plugin Stop and Go BR';
+        const body = 'Olá, gostaria de mais informações sobre o plugin.';
+        
+        window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    });
+}
+
+// Add active class to navigation on scroll
+window.addEventListener('scroll', () => {
+    const sections = document.querySelectorAll('section[id]');
+    const scrollY = window.pageYOffset;
+
+    sections.forEach(section => {
+        const sectionHeight = section.offsetHeight;
+        const sectionTop = section.offsetTop - 100;
+        const sectionId = section.getAttribute('id');
+        
+        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+            document.querySelectorAll(`a[href="#${sectionId}"]`).forEach(link => {
+                link.classList.add('active');
+            });
+        } else {
+            document.querySelectorAll(`a[href="#${sectionId}"]`).forEach(link => {
+                link.classList.remove('active');
+            });
+        }
+    });
+});
+
+// Performance optimization: Lazy load images when implemented
+if ('IntersectionObserver' in window) {
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                if (img.dataset.src) {
+                    img.src = img.dataset.src;
+                    img.removeAttribute('data-src');
+                    observer.unobserve(img);
+                }
+            }
+        });
+    });
+
+    document.querySelectorAll('img[data-src]').forEach(img => {
+        imageObserver.observe(img);
+    });
+}
+
+// Add hover effect sound (optional - disabled by default)
+// Uncomment to enable button click sounds
+/*
+function playClickSound() {
+    const audio = new Audio('data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBiuBzPLTizcIHmm98OefTgwOUKXh8LdjHAU7k9nyz3kvBSl+zPLaizsKGGS69+mjUBELTKXk875sIAYuhM/y1Ys4CBVZ');
+    audio.volume = 0.2;
+    audio.play();
+}
+
+document.querySelectorAll('.btn').forEach(btn => {
+    btn.addEventListener('click', playClickSound);
+});
+*/
+
+console.log('🏁 Stop and Go BR Plugin - Landing Page Loaded');
+console.log('📝 Para configurar pagamentos via Stripe:');
+console.log('   1. Atualize STRIPE_PUBLISHABLE_KEY com sua chave pública');
+console.log('   2. Atualize PRICING_PLANS com seus Price IDs do Stripe');
+console.log('   3. Configure o backend para criar sessões de checkout (recomendado)');
