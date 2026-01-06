@@ -22,11 +22,11 @@ Tabela de preços (use variáveis do CMS):
 
 | Plano           | Preço configurável |
 |-----------------|--------------------|
-| Pit Crew        | {{PIT_CREW_PRICE}}/mês |
-| Team Driver     | {{TEAM_DRIVER_PRICE}}/mês |
-| Team Principal  | {{TEAM_PRINCIPAL_PRICE}}/mês |
+| Pit Crew        | {{PIT_CREW_PRICE \| default:"£3/mês"}} |
+| Team Driver     | {{TEAM_DRIVER_PRICE \| default:"£6/mês"}} |
+| Team Principal  | {{TEAM_PRINCIPAL_PRICE \| default:"£9/mês"}} |
 
-Ajuste as variáveis acima no CMS sempre que os valores mudarem.
+Ajuste as variáveis acima no CMS sempre que os valores mudarem; os valores entre aspas funcionam como padrão caso nada seja preenchido.
 
 ### Pit Crew
 - Acesso ao Discord privado
