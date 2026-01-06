@@ -25,7 +25,7 @@ Comparativo de planos: mensal ou anual, com economia de cerca de 10% na assinatu
 - Perfis de RPM avançados
 - Dashboards com customização
 - Perfis para volante e button box
-- Perfis para flag box, brow & ambient light
+- Perfis para flag box, eyebrow light (barra superior) e ambient light
 - **CTA:** Quero entrar no Pit Crew
 
 ### Team Driver — £6/mês
@@ -35,7 +35,7 @@ Comparativo de planos: mensal ou anual, com economia de cerca de 10% na assinatu
 
 ### Team Principal — £9/mês
 - Todos os recursos do Team Driver
-- “Surpresas” exclusivas (conteúdo VIP)
+- Conteúdos exclusivos: layouts bônus, atualizações antecipadas e brindes digitais
 - **CTA:** Quero ser Team Principal
 
 ## Download do Plugin
