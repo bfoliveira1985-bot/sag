@@ -6,7 +6,7 @@
 - **Vários dispositivos** — Compatível com mais de 100 hardwares populares de simracing para uma experiência unificada.
 - **Compatível com os principais sims** — iRacing, ACC, EA Sports F1, Le Mans Ultimate, Automobilista 2 e outros.
 - **Confiado por campeões** — Perfis usados por pilotos vencedores e campeões de eSports.
-- **Seus carros favoritos** — Mais de 600 carros com RPM calibrado por marcha para cada veículo.
+- **Seus carros favoritos** — Centenas de carros com RPM calibrado por marcha para cada veículo.
 
 ## Dashboards / Themes
 Galeria de temas com fotos reais dos dashboards, para combinar com seu estilo e cada dispositivo.
@@ -14,11 +14,11 @@ Galeria de temas com fotos reais dos dashboards, para combinar com seu estilo e 
 - **Dark (padrão)** — Visual ousado para ambientes com pouca luz.
 - **Light** — Interface clara para ambientes bem iluminados.
 - **Moradness** — Tema especial criado em colaboração com a equipe Moradness, com visual exclusivo.
-- **PSE / Dispositivo dedicado** — Tema feito para hardware parceiro Precision Sim Engineering DD-X e DD-R, além de dispositivos equivalentes.
+- **PSE / Dispositivo dedicado** — Tema feito para hardware parceiro da linha DD da Precision Sim Engineering e dispositivos equivalentes.
 
 ## Membership / Planos
 Comparativo de planos: mensal ou anual, com economia de 10% na assinatura anual.
-Tabela de preços (atualize aqui sempre que os valores mudarem): Pit Crew £3/mês | Team Driver £6/mês | Team Principal £9/mês.
+Tabela de preços (preencha com valores vigentes no CMS): Pit Crew [valor]/mês | Team Driver [valor]/mês | Team Principal [valor]/mês.
 
 ### Pit Crew
 - Acesso ao Discord privado
