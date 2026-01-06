@@ -96,8 +96,9 @@ async function handleCheckout(plan) {
         
         const priceId = PRICING_PLANS[plan];
         
-        // Validate configuration
-        if (!priceId || priceId.includes('_ID') || priceId.includes('YOUR')) {
+        // Validate Stripe Price ID format (should be price_xxxxx)
+        const priceIdPattern = /^price_[a-zA-Z0-9_]+$/;
+        if (!priceId || !priceIdPattern.test(priceId)) {
             hideLoading();
             showConfigurationMessage();
             return;
@@ -117,14 +118,14 @@ async function handleCheckout(plan) {
         
         if (error) {
             console.error('Stripe Checkout error:', error);
-            alert('Erro ao processar pagamento. Por favor, tente novamente.');
+            alert('Erro ao conectar com o sistema de pagamento. Por favor, tente novamente em alguns instantes.');
         }
         
         hideLoading();
     } catch (error) {
         console.error('Checkout error:', error);
         hideLoading();
-        alert('Erro ao processar pagamento. Por favor, tente novamente.');
+        alert('Não foi possível processar o pagamento. Verifique sua conexão e tente novamente.');
     }
 }
 
@@ -140,13 +141,41 @@ function handleEnterpriseContact() {
 
 // Show configuration message when Stripe is not set up
 function showConfigurationMessage() {
-    alert(
-        'Configuração Necessária:\n\n' +
-        '1. Obtenha suas chaves da API Stripe em: https://dashboard.stripe.com/apikeys\n' +
-        '2. Crie seus produtos e preços em: https://dashboard.stripe.com/products\n' +
-        '3. Atualize o arquivo script.js com suas chaves\n\n' +
-        'Por enquanto, entre em contato conosco para adquirir o plugin.'
-    );
+    const message = document.createElement('div');
+    message.style.cssText = `
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+        padding: 2rem;
+        border-radius: 15px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        max-width: 500px;
+        z-index: 10000;
+        text-align: left;
+    `;
+    message.innerHTML = `
+        <h3 style="color: #e63946; margin-bottom: 1rem;">⚙️ Configuração Necessária</h3>
+        <p style="margin-bottom: 1rem;">Para processar pagamentos, você precisa configurar o Stripe:</p>
+        <ol style="margin-bottom: 1rem; padding-left: 1.5rem; line-height: 1.8;">
+            <li>Obtenha suas chaves em:<br><a href="https://dashboard.stripe.com/apikeys" target="_blank" style="color: #457b9d;">dashboard.stripe.com/apikeys</a></li>
+            <li>Crie produtos em:<br><a href="https://dashboard.stripe.com/products" target="_blank" style="color: #457b9d;">dashboard.stripe.com/products</a></li>
+            <li>Atualize o arquivo script.js</li>
+        </ol>
+        <p style="margin-bottom: 1rem;">Consulte <strong>CONFIGURACAO.md</strong> para instruções detalhadas.</p>
+        <button onclick="this.parentElement.remove()" style="
+            background: #e63946;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            width: 100%;
+        ">Entendi</button>
+    `;
+    document.body.appendChild(message);
 }
 
 // Loading overlay controls
