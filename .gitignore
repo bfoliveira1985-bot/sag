@@ -36,7 +36,11 @@ build/
 logs/
 *.log
 
+# Backup files
+*.backup
+
 # Large image files (optional - remove if you want to commit images)
 # plugin/images/*.jpg
 # plugin/images/*.png
 # plugin/images/*.jpeg
+*.backup
