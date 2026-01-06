@@ -14,10 +14,10 @@ Galeria de temas com fotos reais dos dashboards, para combinar com seu estilo e 
 - **Dark (padrão)** — Visual ousado para ambientes com pouca luz.
 - **Light** — Interface clara para ambientes bem iluminados.
 - **Moradness** — Tema especial criado em colaboração com a equipe Moradness, com visual exclusivo.
-- **PSE / Dispositivo dedicado** — Tema feito para hardware parceiro (DD-X / DD-R) e dispositivos equivalentes.
+- **PSE / Dispositivo dedicado** — Tema feito para hardware parceiro Precision Sim Engineering DD-X e DD-R, além de dispositivos equivalentes.
 
 ## Membership / Planos
-Comparativo de planos: mensal ou anual, com economia de cerca de 10% na assinatura anual.
+Comparativo de planos: mensal ou anual, com economia de 10% na assinatura anual.
 
 ### Pit Crew — £3/mês
 - Acesso ao Discord privado
@@ -46,5 +46,5 @@ Comparativo de planos: mensal ou anual, com economia de cerca de 10% na assinatu
 - **O plugin funciona com meu dispositivo?** Compatível com mais de 100 dispositivos populares de simracing.
 - **Quais jogos são suportados?** iRacing, ACC, EA Sports F1, Le Mans Ultimate, Automobilista 2 e outros.
 - **Posso personalizar os dashboards?** Sim, todos os dashboards e perfis de LED podem ser personalizados via plugin.
-- **Existe plano anual com desconto?** Sim, o anual economiza cerca de 10% em comparação ao mensal.
+- **Existe plano anual com desconto?** Sim, o anual economiza 10% em comparação ao mensal.
 - **Há conteúdo grátis?** Oferecemos perfis e dashboards gratuitos; membros têm acesso à biblioteca completa e recursos avançados.
