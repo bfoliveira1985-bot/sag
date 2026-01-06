@@ -1,6 +1,6 @@
 # SAG - Conteúdo para Landing Page (inspirado no site de referência)
 
-## Sessão principal (destaques)
+## Seção principal (destaques)
 - **SimHub** — Perfis de LED e dashboards prontos para o SimHub, com personalização via plugin dedicado.
 - **Telemetria avançada** — Dados sofisticados oferecendo recursos inéditos para dashboards e perfis de LED.
 - **Vários dispositivos** — Compatível com mais de 100 hardwares populares de simracing para uma experiência unificada.
@@ -18,8 +18,7 @@ Galeria de temas com fotos reais dos dashboards, para combinar com seu estilo e 
 
 ## Membership / Planos
 Comparativo de planos (mensal ou anual com economia de cerca de 10% no anual).
-
-- **Mensal | Anual (Economize cerca de 10%)**
+Assinatura anual: economia aproximada de 10% versus o valor mensal.
 
 ### Pit Crew — £3/mês
 - Acesso ao Discord privado
