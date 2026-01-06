@@ -17,9 +17,9 @@ Galeria de temas com fotos reais dos dashboards, para combinar com seu estilo e 
 - **PSE / Dispositivo dedicado** — Tema feito para hardware parceiro (DD-X / DD-R) e dispositivos equivalentes.
 
 ## Membership / Planos
-Comparativo de planos (mensal ou anual com economia de ~10% no anual).
+Comparativo de planos (mensal ou anual com economia de cerca de 10% no anual).
 
-- **Mensal | Anual (Economize 10%)**
+- **Mensal | Anual (Economize cerca de 10%)**
 
 ### Pit Crew — £3/mês
 - Acesso ao Discord privado
