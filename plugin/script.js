@@ -1,7 +1,28 @@
+// ============================================================================
+// STRIPE CONFIGURATION
+// ============================================================================
+// IMPORTANT: Replace these values with your actual Stripe credentials
+// Get your keys from: https://dashboard.stripe.com/apikeys
+// 
+// For testing, use test keys (pk_test_...)
+// For production, use live keys (pk_live_...)
+// 
+// DO NOT commit live keys to version control!
+// Consider using environment variables or a config file (gitignored)
+// ============================================================================
+
 // Initialize Stripe (replace with your publishable key)
-// Get your publishable key from: https://dashboard.stripe.com/apikeys
 const STRIPE_PUBLISHABLE_KEY = 'pk_test_YOUR_STRIPE_PUBLISHABLE_KEY_HERE';
-const stripe = Stripe(STRIPE_PUBLISHABLE_KEY);
+
+// Only initialize Stripe if key is configured
+let stripe = null;
+if (STRIPE_PUBLISHABLE_KEY && !STRIPE_PUBLISHABLE_KEY.includes('YOUR')) {
+    try {
+        stripe = Stripe(STRIPE_PUBLISHABLE_KEY);
+    } catch (error) {
+        console.error('Failed to initialize Stripe:', error);
+    }
+}
 
 // Price IDs for each plan (replace with your actual Stripe Price IDs)
 // Create products and prices at: https://dashboard.stripe.com/products
@@ -63,13 +84,20 @@ pricingButtons.forEach(button => {
 // Handle Stripe Checkout
 async function handleCheckout(plan) {
     try {
+        // Check if Stripe is initialized
+        if (!stripe) {
+            hideLoading();
+            showConfigurationMessage();
+            return;
+        }
+        
         // Show loading overlay
         showLoading();
         
         const priceId = PRICING_PLANS[plan];
         
-        if (!priceId || priceId.includes('YOUR') || priceId.includes('ID')) {
-            // If Stripe is not configured, show a message
+        // Validate configuration
+        if (!priceId || priceId.includes('_ID') || priceId.includes('YOUR')) {
             hideLoading();
             showConfigurationMessage();
             return;
@@ -159,12 +187,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Add parallax effect to hero section
+// Add parallax effect to hero section (with throttling)
+let ticking = false;
 window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const hero = document.querySelector('.hero');
-    if (hero) {
-        hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+    if (!ticking) {
+        window.requestAnimationFrame(() => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+            ticking = false;
+        });
+        ticking = true;
     }
 });
 
@@ -181,26 +216,33 @@ if (contactBtn) {
     });
 }
 
-// Add active class to navigation on scroll
+// Add active class to navigation on scroll (with throttling)
+let navTicking = false;
 window.addEventListener('scroll', () => {
-    const sections = document.querySelectorAll('section[id]');
-    const scrollY = window.pageYOffset;
+    if (!navTicking) {
+        window.requestAnimationFrame(() => {
+            const sections = document.querySelectorAll('section[id]');
+            const scrollY = window.pageYOffset;
 
-    sections.forEach(section => {
-        const sectionHeight = section.offsetHeight;
-        const sectionTop = section.offsetTop - 100;
-        const sectionId = section.getAttribute('id');
-        
-        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-            document.querySelectorAll(`a[href="#${sectionId}"]`).forEach(link => {
-                link.classList.add('active');
+            sections.forEach(section => {
+                const sectionHeight = section.offsetHeight;
+                const sectionTop = section.offsetTop - 100;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                    document.querySelectorAll(`a[href="#${sectionId}"]`).forEach(link => {
+                        link.classList.add('active');
+                    });
+                } else {
+                    document.querySelectorAll(`a[href="#${sectionId}"]`).forEach(link => {
+                        link.classList.remove('active');
+                    });
+                }
             });
-        } else {
-            document.querySelectorAll(`a[href="#${sectionId}"]`).forEach(link => {
-                link.classList.remove('active');
-            });
-        }
-    });
+            navTicking = false;
+        });
+        navTicking = true;
+    }
 });
 
 // Performance optimization: Lazy load images when implemented
