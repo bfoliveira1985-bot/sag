@@ -1,4 +1,4 @@
-# Landing page (conteúdo inspirado no site de referência)
+# SAG - Conteúdo para Landing Page (inspirado no site de referência)
 
 ## Sessão principal (destaques)
 - **SimHub** — Perfis de LED e dashboards prontos para o SimHub, com personalização via plugin dedicado.
@@ -9,19 +9,19 @@
 - **Seus carros favoritos** — Mais de 600 carros com RPM calibrado por marcha para cada veículo.
 
 ## Dashboards / Themes
-Use as fotos dos seus dashboards no lugar dos exemplos abaixo.
+Variações de tema para combinar com seu estilo e com cada dispositivo.
 
 - **Dark (padrão)** — Visual ousado para ambientes com pouca luz.  
-  `![Dark Theme](path/para-sua-imagem-dark.png)`
+  ![Dark Theme](path/para-sua-imagem-dark.png)
 - **Light** — Interface clara para ambientes bem iluminados.  
-  `![Light Theme](path/para-sua-imagem-light.png)`
+  ![Light Theme](path/para-sua-imagem-light.png)
 - **Moradness** — Tema comemorativo da colaboração (substitua com a sua parceria ou mantenha como destaque especial).  
-  `![Tema Especial](path/para-sua-imagem-especial.png)`
+  ![Tema Especial](path/para-sua-imagem-especial.png)
 - **PSE / Dispositivo dedicado** — Tema exclusivo para quem usa hardware parceiro (DD-X / DD-R); adapte ao seu device exclusivo.  
-  `![Tema Dispositivo Parceiro](path/para-sua-imagem-dispositivo.png)`
+  ![Tema Dispositivo Parceiro](path/para-sua-imagem-dispositivo.png)
 
 ## Membership / Planos
-Compare mensal vs. anual (economia de ~10% no anual). Valores e nomes podem ser ajustados.
+Comparativo de planos (mensal ou anual com economia de ~10% no anual).
 
 - **Mensal | Anual (Economize 10%)**
 
