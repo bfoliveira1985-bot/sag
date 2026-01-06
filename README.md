@@ -9,16 +9,12 @@
 - **Seus carros favoritos** — Mais de 600 carros com RPM calibrado por marcha para cada veículo.
 
 ## Dashboards / Themes
-Variações de tema para combinar com seu estilo e com cada dispositivo.
+Galeria de temas com fotos reais dos dashboards, para combinar com seu estilo e cada dispositivo.
 
-- **Dark (padrão)** — Visual ousado para ambientes com pouca luz.  
-  ![Dark Theme](path/para-sua-imagem-dark.png)
-- **Light** — Interface clara para ambientes bem iluminados.  
-  ![Light Theme](path/para-sua-imagem-light.png)
-- **Moradness** — Tema comemorativo da colaboração (substitua com a sua parceria ou mantenha como destaque especial).  
-  ![Tema Especial](path/para-sua-imagem-especial.png)
-- **PSE / Dispositivo dedicado** — Tema exclusivo para quem usa hardware parceiro (DD-X / DD-R); adapte ao seu device exclusivo.  
-  ![Tema Dispositivo Parceiro](path/para-sua-imagem-dispositivo.png)
+- **Dark (padrão)** — Visual ousado para ambientes com pouca luz.
+- **Light** — Interface clara para ambientes bem iluminados.
+- **Moradness** — Tema comemorativo da colaboração com a comunidade, com visual exclusivo.
+- **PSE / Dispositivo dedicado** — Tema feito para hardware parceiro (DD-X / DD-R) e dispositivos equivalentes.
 
 ## Membership / Planos
 Comparativo de planos (mensal ou anual com economia de ~10% no anual).
